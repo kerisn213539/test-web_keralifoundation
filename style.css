@@ -1,6 +1,6 @@
 /* Donate Card Background Image Styling */
 .donate-card {
-  background-image: url('../media/money.jpg') !important;
+  background-image: url('money.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed;
@@ -26,7 +26,7 @@
 
   /* Volunteer Card Background Image Styling */
   .volunteer-card {
-    background-image: url('../media/motivation-4330453_1920.jpg') !important;
+    background-image: url('motivation-4330453_1920.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed;
@@ -70,3 +70,4 @@
       background-size: cover !important;
     }
 }
+
