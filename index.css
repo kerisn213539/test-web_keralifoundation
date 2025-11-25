@@ -23,7 +23,7 @@ body {
 header {
   
   background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
-              url('../media/people.jpg') center/cover no-repeat;
+              url('people.jpg') center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 4rem 2rem;
@@ -929,4 +929,5 @@ html, body {
   .login-form-group input {
     font-size: 16px; /* Prevent iOS zoom */
   }
+
 }
