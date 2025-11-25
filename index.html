@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kerali Foundation Limited</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../css/style.js"></script>
+  <script defer src="../js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <header>
+    <h1>Kerali Foundation Limited</h1>
+    <p>Empowering Communities, Inspiring Change</p>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="fas fa-info-circle"></i><span>About Us</span></a></li>
+        <li><a href="index.html#vision-mission"><i class="fas fa-eye"></i><span>Vision & Mission</span></a></li>
+        <li><a href="index.html#objectives"><i class="fas fa-tasks"></i><span>Programs</span></a></li>
+        <li><a href="donate.html" class="active"><i class="fas fa-hand-holding-heart"></i><span>Donate</span></a></li>
+        <li><a href="volunteer.html"><i class="fas fa-people-group"></i><span>Volunteer</span></a></li>
+        <li><a href="index.html#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+      
+  
+       
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>Who We Are</h2>
+    <p>
+      Kerali Foundation Limited is a nonprofit organization incorporated in Uganda in 2021. 
+      We exist to spark change, empower communities, and create opportunities where they’re needed most.
+    </p>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section id="vision-mission">
+    <h2>Our Vision & Mission</h2>
+    <div class="vision-mission-container">
+      <!-- Vision Circle - Lemon Background -->
+      <div class="vision-circle">
+        <div class="circle-content">
+          <h3>Vision</h3>
+          <p>A Uganda where every person has the tools, skills, and support to thrive.</p>
+        </div>
+      </div>
+      
+      <!-- Mission Circle - Violet Background -->
+      <div class="mission-circle">
+        <div class="circle-content">
+          <h3>Mission</h3>
+          <p>To transform lives through entrepreneurship, education, and sustainable development, while celebrating culture and innovation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectives / Programs -->
+  <section id="objectives">
+    <h2>Our Programs</h2>
+    <ul>
+      <li>💼 Empower livelihoods through social entrepreneurship</li>
+      <li>🏡 Lift communities in rural villages and urban slums</li>
+      <li>🎓 Unlock youth potential with skilling programs</li>
+      <li>🌱 Protect our planet through conservation</li>
+      <li>♿ Champion inclusion for people with disabilities</li>
+      <li>👩‍🎓 Educate teenage girls on menstrual hygiene</li>
+      <li>🧩 Support special-needs children with learning aids</li>
+      <li>💻 Bridge the digital divide with ICT learning</li>
+      <li>🏃 Promote wellness through sports and exercise</li>
+      <li>🎨 Celebrate creativity in art, culture, and research</li>
+    </ul>
+  </section>
+
+  <!-- Get Involved -->
+  <section id="get-involved">
+    <h2>Join us in making a difference. Whether through donations, volunteering, or partnerships, 
+        your support helps us reach more communities and create lasting impact.</h2>
+    <div class="get-involved-content">
+      
+        
+
+      <div class="get-involved-container">
+        <div class="motion-card donate-card">
+          <a href="donate.html"><button class="motion-btn"><b><i>DONATE</i></b></button></a>
+        </div>
+        <div class="motion-card volunteer-card">
+          <a href="volunteer.html"><button class="motion-btn"><b><i>VOLUNTEER</i></b></button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@keralifoundation.org</p>
+    <p>Location: Kampala, Uganda</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Kerali Foundation Limited | Kampala, Uganda</p>
+  </footer>
+
+  <script>
+// Load and apply styles from style.json
+fetch('../css/style.json')
+  .then(response => response.json())
+  .then(data => {
+    const theme = data.theme;
+    const root = document.documentElement;
+    
+    // Apply CSS variables from JSON
+    root.style.setProperty('--primary', theme.colors.primary);
+    root.style.setProperty('--secondary', theme.colors.secondary);
+    root.style.setProperty('--accent', theme.colors.accent);
+    root.style.setProperty('--background', theme.colors.background);
+    root.style.setProperty('--text', theme.colors.text);
+  })
+  .catch(error => console.log('Style.json loaded:', error));
+</script>
+</body>
+</html>

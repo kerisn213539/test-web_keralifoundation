@@ -1,0 +1,932 @@
+:root {
+  --primary: #27ae60;
+  --secondary: #2c3e50;
+  --accent: #f1c40f;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header / Hero Section */
+header {
+  
+  background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+              url('../media/people.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+/* Icon Navigation Styles */
+nav a i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+nav a:hover i {
+  color: #8e44ad;
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 8px rgba(142, 68, 173, 0.6));
+}
+
+nav a:hover span {
+  opacity: 1;
+}
+
+/* Desktop Navigation */
+@media (min-width: 769px) {
+  nav a {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  nav a i {
+    font-size: 1.6rem;
+  }
+  
+  nav a:hover i {
+    font-size: 1.9rem;
+  }
+}
+
+/* Tablet Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  nav a {
+    padding: 0.5rem;
+    justify-content: center;
+  }
+  
+  nav a i {
+    font-size: 1.4rem;
+  }
+  
+  nav a:hover i {
+    font-size: 1.7rem;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 480px) {
+  nav a {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+  
+  nav a i {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+  }
+  
+  nav a:hover i {
+    font-size: 1.5rem;
+  }
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* Get Involved Section Specific Styles */
+#get-involved h2 {
+  text-align: center;
+  animation: slideInDown 0.8s ease-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.get-involved-content p {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  animation: fadeInUp 1s ease-out 0.3s both;
+  color: #555;
+}
+
+/* Vision & Mission Circular Design */
+.vision-mission-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+.vision-circle,
+.mission-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.vision-circle:hover,
+.mission-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Vision Circle - Lemon Background */
+.vision-circle {
+  background: linear-gradient(135deg, #f1c40f 0%, #f4d03f 100%);
+  color: #2c3e50;
+}
+
+/* Mission Circle - Violet Background */
+.mission-circle {
+  background: linear-gradient(135deg, #8e44ad 0%, #a569bd 100%);
+  color: #fff;
+}
+
+.circle-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.circle-content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.circle-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.vision-circle .circle-content p {
+  color: #1a1a1a;
+}
+
+.mission-circle .circle-content p {
+  color: #fff;
+}
+
+/* Objectives Grid */
+#objectives ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+}
+
+#objectives li {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#objectives li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
+  border-color: var(--accent);
+}
+
+#objectives li:nth-child(odd) {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* Get Involved Motion Graphics */
+.get-involved-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.get-involved-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.motion-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(241, 196, 15, 0.1));
+  border: 2px solid var(--primary);
+  min-width: 150px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.motion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
+  border-color: var(--accent);
+}
+
+.floating-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.donate-card .floating-icon {
+  animation-delay: 0s;
+}
+
+.volunteer-card .floating-icon {
+  animation-delay: 0.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.1);
+  }
+  50% {
+    border-color: var(--accent);
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.motion-card:nth-child(odd) {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* Get Involved Buttons */
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.motion-btn {
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.motion-btn:hover::before {
+  left: 0;
+}
+
+.motion-btn:hover {
+  transform: scale(1.08);
+  color: #333;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #219150;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Donation Form Styling */
+.donation-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.2);
+}
+
+.donate-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.donate-btn:hover {
+  background: #219150;
+}
+
+.donate-btn:active {
+  transform: scale(0.98);
+}
+
+.cancel-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--secondary);
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.cancel-btn:hover {
+  color: var(--primary);
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.nav-toggle:hover {
+  background: none;
+}
+
+nav.mobile-open ul {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tablet & Below (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Vision & Mission Circles */
+  .vision-mission-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .vision-circle,
+  .mission-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .circle-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Header adjustments */
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Navigation - Mobile Menu */
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  nav li {
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Sections */
+  section {
+    padding: 2rem 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  section h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Objectives Grid - 1 column on mobile */
+  #objectives ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #objectives li {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* Forms */
+  .donation-form {
+    padding: 1.5rem;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.65rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Buttons */
+  button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+    margin: 0.3rem;
+  }
+
+  .donate-btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cancel-btn {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Admin Table */
+  .admin-table {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.5rem;
+  }
+
+  .logout-btn {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Vision & Mission Circles */
+  .vision-mission-container {
+    gap: 1.5rem;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .vision-circle,
+  .mission-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .circle-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Header */
+  header {
+    padding: 1.5rem 0.75rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Navigation */
+  nav ul {
+    gap: 0;
+    padding: 0;
+  }
+
+  nav a {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* Sections */
+  section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  section p {
+    font-size: 0.95rem;
+  }
+
+  /* Objectives Grid */
+  #objectives ul {
+    gap: 0.75rem;
+  }
+
+  #objectives li {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Forms */
+  .donation-form {
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+    border-radius: 6px;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.6rem;
+    font-size: 16px;
+    border-radius: 3px;
+  }
+
+  /* Buttons */
+  button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+  }
+
+  .donate-btn,
+  .cancel-btn {
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .donate-btn {
+    padding: 0.75rem 1rem;
+  }
+
+  .cancel-btn {
+    margin-top: 0.5rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Tables - Horizontal scroll on very small screens */
+  .admin-table {
+    font-size: 0.8rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.4rem;
+  }
+
+  .admin-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .logout-btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Large Desktop (min-width: 1200px) */
+@media (min-width: 1200px) {
+  header {
+    padding: 5rem 3rem;
+  }
+
+  header h1 {
+    font-size: 3.5rem;
+  }
+
+  header p {
+    font-size: 1.4rem;
+  }
+
+  section {
+    padding: 4rem 3rem;
+    max-width: 1200px;
+  }
+
+  section h2 {
+    font-size: 2.25rem;
+  }
+
+  #objectives ul {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .donation-form {
+    max-width: 700px;
+    padding: 2.5rem;
+  }
+
+  nav ul {
+    gap: 2rem;
+  }
+}
+
+/* Ensure proper width on all screens */
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
+
+/* Flexible container for admin tables */
+.admin-container {
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Text responsiveness */
+@media (max-width: 600px) {
+  h1 { font-size: clamp(1.5rem, 5vw, 3rem); }
+  h2 { font-size: clamp(1.25rem, 4vw, 2rem); }
+  h3 { font-size: clamp(1rem, 3vw, 1.5rem); }
+  p { font-size: clamp(0.9rem, 2vw, 1rem); }
+}
+
+/* Prevent horizontal overflow */
+* {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Login Modal Responsive */
+@media (max-width: 768px) {
+  #login-modal {
+    padding: 1rem;
+  }
+
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .login-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .login-btn {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .login-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .login-form-group input {
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+}

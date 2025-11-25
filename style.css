@@ -1,0 +1,72 @@
+/* Donate Card Background Image Styling */
+.donate-card {
+  background-image: url('../media/money.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed;
+}
+
+.donate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.donate-card button,
+.donate-card a {
+  position: relative;
+  z-index: 2;
+}
+
+  /* Volunteer Card Background Image Styling */
+  .volunteer-card {
+    background-image: url('../media/motivation-4330453_1920.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed;
+  }
+
+  .volunteer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    z-index: 1;
+  }
+
+  .volunteer-card button,
+  .volunteer-card a {
+    position: relative;
+    z-index: 2;
+  }
+
+/* Responsive adjustments for donate card */
+@media (max-width: 768px) {
+  .donate-card {
+    background-attachment: scroll;
+  }
+    .volunteer-card {
+      background-attachment: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+  .donate-card {
+    background-attachment: scroll;
+    background-size: cover !important;
+  }
+    .volunteer-card {
+      background-attachment: scroll;
+      background-size: cover !important;
+    }
+}
