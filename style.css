@@ -70,4 +70,53 @@
       background-size: cover !important;
     }
 }
+/* Keep header nav items on a single horizontal row (phones/tablets/desktop) */
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;             /* do not wrap to multiple rows */
+  gap: 1rem;                     /* spacing between items */
+  margin: 0;
+  padding: 0 0.5rem;             /* slight horizontal padding for touch */
+  list-style: none;
+  overflow-x: auto;              /* allow horizontal scroll on narrow viewports */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  scroll-behavior: smooth;
+  /* optional, keeps the focus visible when interacting via keyboard */
+  -ms-overflow-style: none;      /* hide IE/Edge scrollbar */
+  scrollbar-width: none;         /* hide Firefox scrollbar */
+}
+
+/* Hide WebKit scrollbars (Chrome/Safari/Edge Chromium) */
+nav ul::-webkit-scrollbar { display: none; }
+
+/* Ensure each nav item stays inline and doesn't shrink */
+nav li {
+  flex: 0 0 auto;                /* prevent shrinking, keep inline */
+}
+
+/* Keep link content inline (icon + hidden text) and prevent wrapping */
+nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;           /* prevent text wrapping inside links */
+  padding: 0.4rem 0.6rem;        /* touch-friendly padding */
+}
+
+/* Optional: make scroll-snapping to items (nice UX on touch) */
+nav ul { scroll-snap-type: x mandatory; }
+nav li  { scroll-snap-align: center; }
+
+/* Optional smaller adjustments for very small screens */
+@media (max-width: 360px) {
+  nav a { padding: 0.3rem 0.5rem; }
+  nav a i { font-size: 1.05rem; } /* shrink icon slightly if needed */
+}
+/* Show labels on touch devices (phones/tablets) */
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  nav a span {
+    opacity: 1 !important;     /* make text visible */
+    margin-left: 0.25rem;
+  }
+}
 
